@@ -1,0 +1,12 @@
+.form {
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.input {
+    width: 200px;
+}
+.btn {
+    width: 150px;
+}
