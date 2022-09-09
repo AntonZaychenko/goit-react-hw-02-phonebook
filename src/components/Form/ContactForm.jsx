@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import s from '../Form/Phonebook.module.css'
-import shortid from 'shortid';
+
 import { nanoid } from 'nanoid';
 
-export class Form extends Component {
+export class ContactForm extends Component {
   
   
 
@@ -30,7 +30,7 @@ export class Form extends Component {
      handleSubmit = e => {
         e.preventDefault()
         this.state.id = nanoid()
-        this.props.onSubmit(this.state)
+        this.props.onSubmit( this.state)
         this.resetForm()
      }
 
@@ -39,7 +39,7 @@ export class Form extends Component {
             <div>
                 <form className={s.form} 
                 onSubmit={this.handleSubmit}>
-                    <label>
+                    <label className={s.label}>
                         Name
                     <input
                     type="text"
@@ -52,7 +52,7 @@ export class Form extends Component {
                     onChange={this.handleChange}
                     />
                     </label>
-                    <label>
+                    <label className={s.label}>
                     Number
                     <input
                     type="tel"
@@ -62,6 +62,7 @@ export class Form extends Component {
                     required
                     value={this.state.number}
                     onChange={this.handleChange}
+                    className={s.input} 
                     />  
                     </label>
                     <button 
